@@ -10,6 +10,7 @@ const StockAttributes = ({ selectedStock }) => {
             <p>Current Share Price: {selectedStock.currentSharePrice}</p>
             <p>Purchase Share Price: {selectedStock.boughtSharePrice}</p>
             <h4>Gain/(Loss): </h4>
+            <p>hi </p>
         </div>
     )
 }
