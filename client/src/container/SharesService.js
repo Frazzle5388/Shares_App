@@ -21,6 +21,7 @@ const SharesService = () => {
 
     return (
         <div>
+            <h1>Total: {StockAttributes.total} </h1>
             <SharesList stocks={stocks} onStockClick={onStockClick} />
             {selectedStock ? <StockAttributes selectedStock={selectedStock} /> : null}
         </div >
