@@ -3,8 +3,13 @@ import SharesList from '../components/SharesList';
 import StockAttributes from '../components/StockAttributes';
 
 const SharesService = () => {
+    const [total, setTotal] = useState(0);
     const [stocks, setStocks] = useState([]);
     const [selectedStock, setSelectedStock] = useState(null);
+
+    const updateTotal = (number) => {
+        setTotal(total + number)
+    }
 
     useEffect(() => {
         getStocks();
@@ -21,9 +26,9 @@ const SharesService = () => {
 
     return (
         <div>
-            <h1>Total: {StockAttributes.total} </h1>
+            <h1>Total: {total} </h1>
             <SharesList stocks={stocks} onStockClick={onStockClick} />
-            {selectedStock ? <StockAttributes selectedStock={selectedStock} /> : null}
+            {selectedStock ? <StockAttributes selectedStock={selectedStock} updateTotal={updateTotal} /> : null}
         </div >
     )
 
