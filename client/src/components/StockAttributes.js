@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 
 const StockAttributes = ({ selectedStock, updateTotal }) => {
-    const const [total, setTotal] = useState(0);
+    const [quantity, setQuantity] = useState(0);
 
+    const handleQuantity = event => setQuantity(event.target.value);
 
     const purchase = () => {
-        updateTotal(selectedStock.currentSharePrice)
+        updateTotal(quantity * selectedStock.currentSharePrice)
     }
 
     const sale = () => {
-        updateTotal(-selectedStock.currentSharePrice)
+        updateTotal(-quantity * selectedStock.currentSharePrice)
     }
 
 
@@ -25,10 +26,10 @@ const StockAttributes = ({ selectedStock, updateTotal }) => {
             <p>Current Share Price: {selectedStock.currentSharePrice}</p>
             <p>Purchase Share Price: {selectedStock.boughtSharePrice}</p>
             <h4>Gain/(Loss): </h4>
-            <input></input>
+            <input type="value" placeholder="Quantity of shares to purchase/sell: " value={quantity} onChange={handleQuantity} />
             <button onClick={purchase} >Purchase</button>
             <button onClick={sale}>Sell</button>
-        </div>
+        </div >
     )
 }
 
