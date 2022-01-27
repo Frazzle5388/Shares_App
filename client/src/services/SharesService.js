@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:5000/api/shares'
+const baseURL = 'http://localhost:5000/api/shares';
 
 const SharesService = {
 
