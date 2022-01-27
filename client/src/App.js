@@ -15,7 +15,8 @@ function App() {
   }
 
   useEffect(() => {
-    SharesService.getStock();
+    SharesService.getStock()
+      .then(setStocks)
   }, [])
 
   const onStockClick = function (stock) {

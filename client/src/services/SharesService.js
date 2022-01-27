@@ -3,8 +3,10 @@ const baseURL = 'http://localhost:5000/api/shares';
 const SharesService = {
 
     getStock() {
+        console.log('fetching');
         return fetch(baseURL)
             .then(res => res.json());
+
     },
 
     // updateShares(shares) {
